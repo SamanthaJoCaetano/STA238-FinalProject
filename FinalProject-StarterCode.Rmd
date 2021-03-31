@@ -1,0 +1,258 @@
+---
+title: "Informative Title"
+author: "Your Name - Your Student Number"
+date: April 16, 2021
+output:
+  pdf_document: default
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+library(openintro)
+```
+
+
+
+# Abstract
+
+<Here you should put a summary of the entire report. You should write the section at the end (i.e., after finishing the other 5 main sections).>
+
+
+
+# Introduction
+
+<Here you should have a few paragraphs of text introducing the problem, getting the reader interested/ready for the rest of the report.>
+
+<Introduce terminology.>
+
+<Highlight hypotheses.>
+
+<Optional: You can also include a description of each section of this report as a last paragraph.>
+
+
+# Data
+
+<Type here a paragraph introducing the data, its context and the data collection process.>
+
+```{r, include = FALSE}
+
+# Here you can load in and clean the data (you may need to do the cleaning in a separate R script). 
+
+# You may need additional chunks, in case you want to include some of the cleaning output.
+
+```
+
+<Type here a summary of the cleaning process.> 
+
+<Remember, you may want to use multiple datasets here, if you do end up using multiple data sets, or merging the data, be sure to describe this in the cleaning process and be sure to discuss important aspects of all the data that you used.>
+
+<Include a description of the important variables.> 
+
+```{r, include=FALSE}
+
+# Use this to calculate some summary measures. 
+
+```
+
+
+<Include a description of the numerical summaries. Remember you can use `r ` to use inline R code.>
+
+```{r, echo = TRUE}
+
+# Use this to create some plots. 
+
+```
+
+<Include a clear description of the plot(s). I would recommend one paragraph for each plot.> 
+
+All analysis for this report was programmed using `R version 4.0.4`.
+
+
+# Methods
+
+<Include some text introducing each type of methodology as an overall intro to this section.>
+
+
+<I have included subsections below. You can remove them if you'd like. Or keep them, but maybe rearrange to better flow for your analysis. Or just keep it as is. It's up to you. There are some recommendations regarding re-ordering of the sections in the comments of the Results.>
+
+## Linear Regression
+
+<Here you should describe a linear regression.>
+
+$$ include.your.mathematical.model.here.if.you.have.some.math.to.show $$
+<Explain your model here.>
+
+## Confidence Interval
+
+<Here you should specify which CI you are using and why. Specifiy the confidence level. You may want to briefly elaborate on why you chose this confidence level. It should NOT be in order to get significant results - that would be an unethical practice. If you are using a bootstrap, then explain it here.>
+
+## Maximum Likelihood Estimator
+
+<Here you should briefly explain the assumptions of the data for your MLE derivation. Remember to put the actual maths in the Appendix, but here you can introduce the problem. For example, "Assume the data is a random sample of Normal random variables with mean, $\mu$ and fixed variance, $\sigma^2=4$. I have used the maximum likelihood estimator (MLE) approach to estimate the mean, $\mu$. The MLE of $\mu$ is $\bar{X}$. All derivations regarding the MLE can be found in Section 1 of the Appendix.">
+
+## Hypothesis Test
+
+<Here you should explain the methodology associated with the hypothesis test of the mean, as well as any assumptions.>
+
+## Goodness of Fit Test
+
+<Here you should explain the methodology associated with the goodness of fit test, as well as any assumptions.>
+
+## Bayesian Credible Interval
+
+<Here you should briefly explain the posterior distribution derivation, as well as the Bayesian Credible Interval methodology. Remember to put the actual maths in the Appendix, but here you can introduce the problem. For example, "Assume we are interested in finding a 95% credible interval of the parameter $\mu$. Suppose our data is a random sample of Normal random variables with mean, $\mu$ and fixed variance, $\sigma^2=4$; and the prior distribution of $\mu$ is assumed to be Normal($\mu_0=0$, $\sigma^2_0=1000$) in hopes of yielding a neutral/non-informative prior. The posterior distribution of $\mu$ is Normal with mean $\frac{1000n\bar{x}}{4+1000n}$, and variance $\frac{4000}{4+1000n}$. Thus, we can use the first and 99th percentiles of this distribution to derive a range of values, in which $\mu$ has 98% probability of falling into. All derivations regarding the posterior distribution can be found in Section 2 of the Appendix."> 
+
+
+
+
+<Note, you might want to use a different confidence level. 98% is not really conventional or may not be practical for your data. It might be a good idea to have a consistent $\alpha$ level across all of your CIs and hypothesis tests. Otherwise, (without reasonable justification) the analysis will look suspicious.>
+
+<Note, you should have some justification for the prior. Perhaps you want to use a conjugate or a non-informative prior, or perhaps you have useful prior info that you want to use in your prior. Nonetheless, you should have some justification here.>
+
+<Add in descriptions of any other methdologies you use. If you are using subtitles, then use more subtitles for these subsections.> 
+
+
+# Results 
+
+<A paragraph introducing the the overall results.>
+
+<Again, I have included subsections below. You can remove them if you'd like. Or keep them, but maybe rearrange to better flow for your analysis. Again, it's up to you. But, the ordering should match the ordering of the subsections in your Methods Section. >
+
+## Linear regression.
+
+```{r, include = FALSE}
+
+# Here you can run your lm... 
+
+# I feel like the linear model should go at the end in terms of ordering. I mean, one variable stuff seems like it should preceed the two variable stuff. This is just a random thought and a bit of a recommendation if you aren't really sure about how to improve on the flow. Again, order things how you want, just be consistent between this section and the Methods (makes it easier for the reader).
+
+
+```
+
+<Here you could present your results. You may want to put them into a well formatted table. Be sure that there is some text describing the results, tables and/or plots.>
+
+```{r, include =TRUE}
+
+
+
+## Maybe create a nice scatterplot with a regression line laid on top.
+
+
+
+```
+
+<Maybe you want to describe your scatterplot. Hint, hint...>
+
+## Confidence Interval
+
+```{r, include = FALSE}
+
+# Here you can calculate your CIs, run a bootstrap, etc.
+
+
+# (maybe you want to use the MLE to find the CI or your test stat. That sounds like a good way to order the analysis... I don't know, just spit balling here.)
+
+```
+
+<Here you could present your results. You may want to put them into a well formatted table. Be sure that there is some text describing the results, tables and/or plots.>
+
+## Maximum Likelihood Estimator
+
+```{r, include = FALSE}
+
+# Here you can calculate your MLE based on the data. (Again, if you're using the MLE in your CI, you should probably put this subsection before the CI subsection)..
+
+```
+
+<Here you could present your results.>
+
+
+## Hypothesis Test
+
+```{r, include = FALSE}
+
+# Here you can calculate your test stats, critical values, etc.
+
+# (maybe you want to use the MLE to find the CI or your test stat. That sounds like a good way to order the analysis... I don't know, just spit balling here.)
+
+```
+
+<Here you could present your results. You may want to put them into a well formatted table. Be sure that there is some text describing the results, tables and/or plots.>
+
+## Goodness of Fit Test
+
+```{r, include = FALSE}
+
+# Here you can calculate your test stats, critical values, etc.
+
+# I feel like this section is exploring the distribution of the data. It may be helpful in describing the data. If that's the case, you should probably put this subsection first. 
+# Alternatively, you could use this to help you find a prior, perhaps?? If that's the case, then put this subsection directly before the Bayesian CI subsection 
+
+```
+
+<Here you could present your results. You may want to put them into a well formatted table. Be sure that there is some text describing the results, tables and/or plots.>
+
+## Bayesian Credible Interval
+
+```{r, include = FALSE}
+
+# Here you can calculate your Credible Interval
+
+```
+
+<Here you could present your results. You may want to put them into a well formatted table. Be sure that there is some text describing the results, tables and/or plots.>
+
+<Note: Alternatively you can use the `knitr::kable` function to create a well formatted table from your code. See here: [https://rmarkdown.rstudio.com/lesson-7.html](https://rmarkdown.rstudio.com/lesson-7.html).>
+
+
+<Remember you can use `r ` to use inline R code.>
+
+
+```{r, include = FALSE}
+
+# Here you can include some relevant visualizations.
+
+
+```
+
+<Include an explanation/interpretation of the visualizations. Make sure to comment on the appropriateness of the assumptions/results.>
+
+# Conclusions
+
+<Here you should give a summary of the Hypotheses, Methods and Results>
+
+<Highlight Key Results.>
+
+<Talk about big picture.>
+
+## Weaknesses
+
+<Comment on any Weaknesses. Note, you are making a lot of assumptions in the MLE and posterior derivations. There is likely to be weaknesses in this. Perhaps having prior info would have been helpful. Perhaps, a more sophisticated Bayesian approach (that we havent learned about in STA238, but you might learn about in a senior level stats course) was needed.>
+
+## Next Steps
+<Comment on Future Work/Next Steps/Recommendations.>
+
+## Discussion
+
+<End with a concluding paragraph to wrap up the report.>
+
+
+# Bibliography
+
+1. Grolemund, G. (2014, July 16) *Introduction to R Markdown*. RStudio. [https://rmarkdown.rstudio.com/articles_intro.html](https://rmarkdown.rstudio.com/articles_intro.html). (Last Accessed: January 15, 2021) 
+
+2. Dekking, F. M., et al. (2005) *A Modern Introduction to Probability and Statistics: Understanding why and how.* Springer Science & Business Media.
+
+3.  Allaire, J.J., et. el. *References: Introduction to R Markdown*. RStudio. [https://rmarkdown.rstudio.com/docs/](https://rmarkdown.rstudio.com/docs/). (Last Accessed: January 15, 2021) 
+
+\newpage
+
+# Appendix
+
+## Section 1 
+
+<Include your MLE derivations here.>
+
+## Section 2 
+
+<Include your posterior distribution derivations here.>
